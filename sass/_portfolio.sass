@@ -1,0 +1,19 @@
+.portfolio
+  margin-bottom: 15.1rem
+  &__container
+    max-width: 192rem
+    padding: 0
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr))
+    justify-content: center
+    @include respond(tab-land)
+      grid-template-columns: 1fr 1fr
+      justify-content: center
+    @include respond(phone)
+      grid-template-columns: 1fr
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+

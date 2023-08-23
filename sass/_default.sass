@@ -1,0 +1,63 @@
+$color-accent: #F7654A
+$color-dark: #404149
+$color-gray: #999999
+$color-white: #FFFFFF
+$color-black: #000000
+
+$container: 111rem
+
+@mixin respond($breakpoint)
+  @if $breakpoint == phone
+    @media (max-width: 575px)
+      @content
+  @if $breakpoint == tab-port
+    @media (max-width: 669px)
+      @content
+  @if $breakpoint == tab-land
+    @media (max-width: 1109px)
+      @content
+
+html
+  box-sizing: border-box
+  /* размер шрифта - 10px */
+  font-size: 62.5%
+  @include respond(phone)
+    font-size: 50.25%
+
+*,
+*::before,
+*::after
+  /* делаем свойство наследуемым, чтобы при подключении плагинов оно не сбивалось */
+  box-sizing: inherit
+
+button
+  padding: 0
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+img, svg 
+  max-width: 100%
+  max-height: 100%
+  height: auto
+  display: block
+
+a 
+  text-decoration: none
+  color: inherit
+
+ul 
+  list-style: none
+  padding: 0
+  margin: 0
+
+body
+  font-family: 'Oswald', sans-serif
+  font-weight: 400
+  background-color: $color-white
+
+.container
+  max-width: $container
+  margin: 0 auto
+  @include respond(tab-land)
+    padding: 0 1rem
